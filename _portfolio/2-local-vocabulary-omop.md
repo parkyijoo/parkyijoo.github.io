@@ -2,6 +2,10 @@
 title: "Integrating Local Vocabularies into the OMOP CDM"
 excerpt: "A semi-automated framework for mapping Korean EDI codes to standard OMOP vocabularies, published as a step-by-step tutorial."
 collection: portfolio
+card_icon: "fa-solid fa-language"
+card_tags: ["OMOP Vocabulary", "Korean EDI", "Semi-automated mapping"]
+# header:
+#   teaser: "project-local-vocabulary.png"   # put an image in images/ to replace the icon
 ---
 
 ## Motivation

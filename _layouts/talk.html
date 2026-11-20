@@ -37,6 +37,7 @@ layout: default
         {% endif %}
         {% assign talk_type = page.talk_type | default: page.type %}
         {% if talk_type %}<p>{{ talk_type }} at {{ page.venue }}, {{ page.location }}</p>{% endif %}
+        {% if page.award %}<p class="talk-award"><i class="fa-solid fa-trophy" aria-hidden="true"></i> {{ page.award }}</p>{% endif %}
 
         </header>
       {% endunless %}

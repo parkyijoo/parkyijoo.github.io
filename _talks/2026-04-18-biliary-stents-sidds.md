@@ -6,5 +6,5 @@ permalink: /talks/2026-04-18-biliary-stents-sidds
 venue: 'Seoul International Digestive Disease Symposium (SIDDS) 2026'
 date: 2026-04-18
 location: 'Korea'
+award: 'Best Poster Award'
 ---
-🏆 **Best Poster Award**

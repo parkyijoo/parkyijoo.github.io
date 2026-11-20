@@ -2,6 +2,10 @@
 title: "Medical Device Common Data Model (MDV-CDM) for Post-Market Surveillance"
 excerpt: "Master's thesis: a standardized, multi-institutional CDM for medical devices built on OMOP CDM, applied to real-world comparisons of TAVR valves and biliary stents."
 collection: portfolio
+card_icon: "fa-solid fa-heart-pulse"
+card_tags: ["OMOP CDM", "UDI", "TAVR", "Biliary stents", "Comparative effectiveness"]
+# header:
+#   teaser: "project-mdv-cdm.png"   # put an image in images/ to replace the icon
 ---
 
 **Master's thesis** — *Development and Application of a Standardized Common Data Model for Medical Device Post-Market Surveillance*
@@ -21,5 +25,5 @@ Medical devices are hard to study with routinely collected health data: device-l
 ## Outputs
 - Oral presentation, OHDSI APAC Symposium 2026
 - Posters at OHDSI Global Symposium 2026, KSC 2026, KOSMI 2025–2026, SIDDS 2026 and more — see [Presentations](/talks/)
-- 🏆 Best Poster Awards at KOSMI Spring 2026 and SIDDS 2026
-- 🏆 Grand Prize, Medical Device CDM Analysis Ideathon (NIDS, 2026)
+- <i class="fa-solid fa-trophy" style="color: var(--yp-award)"></i> Best Poster Awards at KOSMI Spring 2026 and SIDDS 2026
+- <i class="fa-solid fa-trophy" style="color: var(--yp-award)"></i> Grand Prize, Medical Device CDM Analysis Ideathon (NIDS, 2026)

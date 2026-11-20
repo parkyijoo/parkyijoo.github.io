@@ -1,0 +1,16 @@
+{% assign limit = include.limit | default: 5 %}
+<ul class="news-list">
+  {% for item in site.data.news limit: limit %}
+  <li><span class="news-date">{{ item.date }}</span>{% if item.award %}<i class="fa-solid fa-trophy" style="color: var(--yp-award)" aria-hidden="true"></i>{% endif %}{{ item.text | markdownify }}</li>
+  {% endfor %}
+</ul>
+{% if site.data.news.size > limit %}
+<details class="news-more">
+  <summary>Show older news</summary>
+  <ul class="news-list">
+    {% for item in site.data.news offset: limit %}
+    <li><span class="news-date">{{ item.date }}</span>{% if item.award %}<i class="fa-solid fa-trophy" style="color: var(--yp-award)" aria-hidden="true"></i>{% endif %}{{ item.text | markdownify }}</li>
+    {% endfor %}
+  </ul>
+</details>
+{% endif %}

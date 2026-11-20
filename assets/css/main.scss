@@ -36,3 +36,317 @@
     "layout/archive",
     "layout/sidebar"
 ;
+/* Profile photo: keep the original light gray ring instead of the theme's blue */
+.author__avatar img {
+  border-color: var(--yp-card-border) !important;
+}
+
+/* ==========================================================================
+   Custom components (footer, About page, Projects, Presentations)
+   ========================================================================== */
+
+:root {
+  --yp-card-bg        : #ffffff;
+  --yp-card-border    : #e3e7ee;
+  --yp-muted          : #5a6270;
+  --yp-shadow-hover   : 0 6px 18px rgba(0, 56, 118, 0.12);
+  --yp-oral           : #1d4ed8;
+  --yp-oral-bg        : rgba(29, 78, 216, 0.10);
+  --yp-poster         : #047857;
+  --yp-poster-bg      : rgba(4, 120, 87, 0.10);
+  --yp-lightning      : #b45309;
+  --yp-lightning-bg   : rgba(180, 83, 9, 0.12);
+  --yp-award          : #a16207;
+  --yp-award-bg       : rgba(234, 179, 8, 0.14);
+}
+
+html[data-theme="dark"] {
+  --yp-card-bg        : #2c323e;
+  --yp-card-border    : #3a4150;
+  --yp-muted          : #a9b1bd;
+  --yp-shadow-hover   : 0 6px 18px rgba(0, 0, 0, 0.35);
+  --yp-oral           : #93b4ff;
+  --yp-oral-bg        : rgba(147, 180, 255, 0.14);
+  --yp-poster         : #6ee7b7;
+  --yp-poster-bg      : rgba(110, 231, 183, 0.12);
+  --yp-lightning      : #fbbf24;
+  --yp-lightning-bg   : rgba(251, 191, 36, 0.14);
+  --yp-award          : #facc15;
+  --yp-award-bg       : rgba(250, 204, 21, 0.14);
+}
+
+/* Footer: white text on the blue bar */
+.page__footer {
+  color: #fff;
+
+  .fas,
+  .fab,
+  .far,
+  .fal {
+    color: #fff;
+  }
+}
+
+/* Cards shared by Research Interests and Projects */
+.yp-card {
+  background: var(--yp-card-bg);
+  border: 1px solid var(--yp-card-border);
+  border-radius: 10px;
+  transition: $global-transition;
+}
+
+/* --- About: Research Interests ------------------------------------------- */
+.interest-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1em;
+  margin: 1em 0 2em;
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.interest-card {
+  padding: 1.1em 1.2em;
+
+  i {
+    font-size: 1.4em;
+    color: var(--global-base-color);
+    margin-bottom: 0.5em;
+  }
+
+  h3 {
+    margin: 0 0 0.3em;
+    font-size: 1em;
+  }
+
+  p {
+    margin: 0;
+    font-size: 0.85em;
+    color: var(--yp-muted);
+  }
+}
+
+/* --- About: News ---------------------------------------------------------- */
+.news-list {
+  list-style: none;
+  margin: 1em 0;
+  padding: 0;
+
+  li {
+    display: flex;
+    align-items: baseline;
+    gap: 0.8em;
+    margin-bottom: 0.6em;
+
+    p {
+      margin: 0;
+    }
+  }
+}
+
+.news-date {
+  flex: 0 0 auto;
+  min-width: 5.6em;
+  padding: 0.15em 0.6em;
+  border-radius: 999px;
+  background: var(--global-base-color);
+  color: var(--global-bg-color);
+  font-size: 0.75em;
+  font-weight: 600;
+  text-align: center;
+}
+
+.news-more summary {
+  cursor: pointer;
+  color: var(--global-base-color);
+  font-size: 0.9em;
+  font-weight: 600;
+  margin-bottom: 0.8em;
+}
+
+/* --- About: Awards --------------------------------------------------------- */
+.award-list {
+  list-style: none;
+  margin: 1em 0;
+  padding: 0;
+
+  li {
+    display: flex;
+    align-items: baseline;
+    gap: 0.7em;
+    margin-bottom: 0.5em;
+  }
+
+  i {
+    color: var(--yp-award);
+  }
+
+  .award-date {
+    color: var(--yp-muted);
+    font-size: 0.85em;
+  }
+}
+
+/* --- Projects grid ---------------------------------------------------------- */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5em;
+  margin-top: 1.5em;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color: inherit;
+  text-decoration: none;
+
+  &,
+  & * {
+    text-decoration: none !important;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--yp-shadow-hover);
+  }
+}
+
+.project-card__media {
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #003876 0%, #1d6fb8 100%);
+  color: #fff;
+  font-size: 3em;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.project-card__body {
+  padding: 1em 1.2em 1.2em;
+
+  h2 {
+    margin: 0 0 0.5em;
+    font-size: 1.05em;
+    line-height: 1.35;
+    color: var(--global-base-color);
+  }
+
+  p {
+    margin: 0 0 0.8em;
+    font-size: 0.85em;
+    color: var(--yp-muted);
+  }
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em;
+}
+
+.project-tag {
+  padding: 0.1em 0.6em;
+  border-radius: 999px;
+  border: 1px solid var(--yp-card-border);
+  font-size: 0.7em;
+  color: var(--yp-muted);
+}
+
+/* --- Presentations --------------------------------------------------------- */
+.talk-year {
+  margin-top: 1.5em;
+  padding-bottom: 0.3em;
+  border-bottom: 2px solid var(--global-base-color);
+  color: var(--global-base-color);
+}
+
+.talk-item {
+  padding: 0.9em 1em;
+  margin: 0.8em 0;
+  border-left: 3px solid var(--yp-card-border);
+  border-radius: 4px;
+
+  &--award {
+    border-left-color: var(--yp-award);
+    background: var(--yp-award-bg);
+  }
+}
+
+.talk-item__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6em;
+  margin-bottom: 0.3em;
+  font-size: 0.75em;
+  color: var(--yp-muted);
+}
+
+.talk-item__title {
+  margin: 0 0 0.2em;
+  font-size: 1em;
+  line-height: 1.4;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.talk-item__venue {
+  margin: 0;
+  font-size: 0.85em;
+  color: var(--yp-muted);
+}
+
+.talk-tag {
+  padding: 0.1em 0.6em;
+  border-radius: 999px;
+  font-weight: 600;
+
+  &--oral      { color: var(--yp-oral);      background: var(--yp-oral-bg); }
+  &--poster    { color: var(--yp-poster);    background: var(--yp-poster-bg); }
+  &--lightning { color: var(--yp-lightning); background: var(--yp-lightning-bg); }
+}
+
+.talk-award {
+  display: inline-block;
+  margin-top: 0.4em;
+  font-size: 0.8em;
+  font-weight: 600;
+  color: var(--yp-award);
+}
+
+.talk-item__links {
+  margin: 0.3em 0 0;
+  font-size: 0.8em;
+}
+
+/* Keep heading text aligned with body text; show the permalink icon on hover in the left margin */
+.page__content,
+.archive {
+  :is(h1, h2, h3, h4, h5, h6)[id] {
+    position: relative;
+
+    > a[href^="#"]:empty:not(.heading-permalink) {
+      position: absolute;
+      left: -1.6em;
+      margin: 0;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    &:hover > a[href^="#"]:empty {
+      opacity: 0.6;
+    }
+  }
+}

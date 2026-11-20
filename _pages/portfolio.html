@@ -7,8 +7,25 @@ author_profile: true
 
 {% include base_path %}
 
-
-{% for post in site.portfolio %}
-  {% include archive-single.html %}
-{% endfor %}
-
+<div class="project-grid">
+  {% for post in site.portfolio %}
+  <a class="yp-card project-card" href="{{ base_path }}{{ post.url }}">
+    <div class="project-card__media">
+      {% if post.header.teaser %}
+        <img src="{{ post.header.teaser | prepend: '/images/' | prepend: base_path }}" alt="">
+      {% else %}
+        <i class="{{ post.card_icon | default: 'fa-solid fa-flask' }}" aria-hidden="true"></i>
+      {% endif %}
+    </div>
+    <div class="project-card__body">
+      <h2>{{ post.title }}</h2>
+      <p>{{ post.excerpt | strip_html | strip }}</p>
+      {% if post.card_tags %}
+      <div class="project-tags">
+        {% for tag in post.card_tags %}<span class="project-tag">{{ tag }}</span>{% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </a>
+  {% endfor %}
+</div>

@@ -1,0 +1,19 @@
+# News items shown on the About page, newest first.
+# Only the first 5 are shown by default; the rest go under "Show older news".
+# Set award: true to add a trophy icon.
+
+- date: "Nov 2026"
+  text: "Gave an oral presentation on the medical device CDM (MDV-CDM) at the **OHDSI APAC Symposium 2026**"
+- date: "Oct 2026"
+  text: "Presented a poster at the **OHDSI Global Symposium 2026**"
+- date: "Oct 2026"
+  text: "Our tutorial on integrating local vocabulary into the OMOP CDM was published in *Healthcare Informatics Research*"
+- date: "Jun 2026"
+  text: "Received the **Best Poster Award** at the KOSMI Spring Conference 2026"
+  award: true
+- date: "May 2026"
+  text: "Won the **Grand Prize** at the Medical Device CDM Analysis Ideathon (NIDS)"
+  award: true
+- date: "Apr 2026"
+  text: "Received the **Best Poster Award** at SIDDS 2026"
+  award: true

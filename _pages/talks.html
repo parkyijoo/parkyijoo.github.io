@@ -5,12 +5,31 @@ permalink: /talks/
 author_profile: true
 ---
 
+{% include base_path %}
+
 {% if site.talkmap_link == true %}
-
 <p style="text-decoration:underline;"><a href="/talkmap.html">See a map of all the places I've given a talk!</a></p>
-
 {% endif %}
 
-{% for post in site.talks reversed %}
-  {% include archive-single-talk.html %}
+{% assign talks_sorted = site.talks | sort: "date" | reverse %}
+{% assign talks_by_year = talks_sorted | group_by_exp: "talk", "talk.date | date: '%Y'" %}
+
+{% for year in talks_by_year %}
+<h2 class="talk-year">{{ year.name }}</h2>
+  {% for post in year.items %}
+    {% if post.type contains "Oral" %}{% assign kind = "oral" %}
+    {% elsif post.type contains "Poster" %}{% assign kind = "poster" %}
+    {% elsif post.type contains "Lightning" %}{% assign kind = "lightning" %}
+    {% else %}{% assign kind = "oral" %}{% endif %}
+<div class="talk-item{% if post.award %} talk-item--award{% endif %}">
+  <div class="talk-item__meta">
+    <span class="talk-tag talk-tag--{{ kind }}">{{ post.type }}</span>
+    <span>{{ post.date | date: "%b %d, %Y" }}</span>
+  </div>
+  <h3 class="talk-item__title"><a href="{{ base_path }}{{ post.url }}">{{ post.title }}</a></h3>
+  <p class="talk-item__venue">{{ post.venue }} · {{ post.location }}</p>
+  {% if post.award %}<span class="talk-award"><i class="fa-solid fa-trophy" aria-hidden="true"></i> {{ post.award }}</span>{% endif %}
+  {% if post.slidesurl %}<p class="talk-item__links"><a href="{{ post.slidesurl }}"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> {% if kind == "poster" %}View Poster{% else %}View Slides{% endif %} (PDF)</a></p>{% endif %}
+</div>
+  {% endfor %}
 {% endfor %}
