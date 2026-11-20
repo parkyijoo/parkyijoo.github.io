@@ -11,35 +11,22 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* M.S. in Biomedical Systems Informatics, Yonsei University, Feb 2027 (expected)
+  * Thesis: *Development and Application of a Standardized Common Data Model for Medical Device Post-Market Surveillance*
+  * Advisor: Prof. Seng Chan You
+<!-- TODO: add your B.S. degree, e.g. * B.S. in ..., University, Year -->
 
-Work experience
-======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
-
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
-
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
+<!-- TODO: add Skills (e.g. R, SQL, Python, OMOP CDM, ATLAS, HADES) and uncomment
 Skills
 ======
 * Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+-->
+
+Honors & Awards
+======
+* Best Poster Award, 2026 KOSMI Spring Conference, Jun 2026
+* Grand Prize, Medical Device CDM Analysis Ideathon, hosted by NIDS, May 2026
+* Best Poster Award, SIDDS 2026, Apr 2026
 
 Publications
 ======
@@ -47,18 +34,14 @@ Publications
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
   
-Talks
+Presentations
 ======
   <ul>{% for post in site.talks reversed %}
     {% include archive-single-talk-cv.html  %}
   {% endfor %}</ul>
   
-Teaching
+Lectures
 ======
   <ul>{% for post in site.teaching reversed %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
